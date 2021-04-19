@@ -158,6 +158,7 @@ let g:which_key_map.s = {
 " S is for Session
 let g:which_key_map.S = {
       \ 'name' : '+Session' ,
+      \ 'a' : [':Telescope zessions sessions'           , 'all sessions'],
       \ 's' : [':SessionSave'           , 'save session'],
       \ 'l' : [':SessionLoad'           , 'load Session'],
       \ }
