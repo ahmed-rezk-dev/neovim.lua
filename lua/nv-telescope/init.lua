@@ -3,6 +3,7 @@ local actions = require('telescope.actions')
 ------------------------------
 -- '--color=never',
 require('telescope').load_extension('media_files')
+require('telescope').load_extension('session_manager')
 -- require('telescope').load_extension('zessions.lua')
 require('telescope').setup {
     defaults = {

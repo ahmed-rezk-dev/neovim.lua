@@ -69,10 +69,13 @@ return require('packer').startup(function(use)
     use 'nvim-lua/plenary.nvim'
     use 'nvim-telescope/telescope.nvim'
     use 'nvim-telescope/telescope-media-files.nvim'
+    use 'https://github.com/Shatur/neovim-session-manager'
 
     -- Explorer
     use 'kyazdani42/nvim-tree.lua'
-    use 'https://gitlab.com/raz13l/zessions'
+
+    -- Seesion manager
+    -- use 'https://gitlab.com/raz13l/zessions'
 
     -- Color
     use 'christianchiarulli/nvcode-color-schemes.vim'
@@ -176,4 +179,17 @@ return require('packer').startup(function(use)
     -- use 'nvim-treesitter/nvim-treesitter-refactor'
     -- use 'nvim-treesitter/playground'
     -- use 'moll/vim-bbye'
+
+	-- Trouble
+	use {
+      "folke/trouble.nvim",
+      requires = "kyazdani42/nvim-web-devicons",
+      config = function()
+       require("trouble").setup {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    	}
+      end
+	}
 end)

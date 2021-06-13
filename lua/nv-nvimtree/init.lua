@@ -3,7 +3,7 @@
 let g:nvim_tree_hide_dotfiles = 1 "0 by default, this option hides files and folders starting with a dot `.`
 let g:nvim_tree_git_hl = 1 "0 by default, will enable file highlight for git attributes (can be used without the icons).
 " let g:nvim_tree_tab_open = 1 "0 by default, will open the tree when entering a new tab and the tree was previously open
-" let g:nvim_tree_width_allow_resize  = 1 "0 by default, will not resize the tree when opening a file
+"let g:nvim_tree_width_allow_resize  = 1 "0 by default, will not resize the tree when opening a file
 let g:nvim_tree_show_icons = {
     \ 'git': 1,
     \ 'folders': 1,
@@ -14,6 +14,7 @@ let g:nvim_tree_show_icons = {
 "1 by default, notice that if 'files' is 1, it will only display
 "if nvim-web-devicons is installed and on your runtimepath ]]
 -- vim.g.nvim_tree_ignore = [ '.git', 'node_modules', '.cache' ] "empty by default
+vim.g.nvim_tree_width_allow_resize = 1 --"1 by default, disables netrw
 vim.g.nvim_tree_disable_netrw = 0 --"1 by default, disables netrw
 -- vim.g.nvim_tree_hijack_netrw = 0 --"1 by default, prevents netrw from automatically opening when opening directories (but lets you keep its other utilities)
 vim.g.nvim_tree_hide_dotfiles = 1 --0 by default, this option hides files and folders starting with a dot `.`

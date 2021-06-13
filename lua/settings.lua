@@ -17,7 +17,7 @@ vim.o.mouse = "a" -- Enable your mouse
 vim.o.splitbelow = true -- Horizontal splits will automatically be below
 vim.o.termguicolors = true -- set term giu colors most terminals support this
 vim.o.splitright = true -- Vertical splits will automatically be to the right
-vim.o.t_Co = "256" -- Support 256 colors
+-- vim.o.t_Co = "256" -- Support 256 colors SHOWS ERROR
 vim.o.conceallevel = 0 -- So that I can see `` in markdown files
 vim.cmd('set ts=4') -- Insert 2 spaces for a tab
 vim.cmd('set sw=4') -- Change the number of space characters inserted for indentation
@@ -41,4 +41,51 @@ vim.o.guifont = "FiraCode Nerd Font:h17"
 vim.cmd('set shell=/bin/zsh')
 -- vim.cmd('set shell=~/.zshrc')
 
+-- To disable swap files
+vim.cmd('set noswapfile')
+
+
 -- vim.o.guifont = "JetBrains\\ Mono\\ Regular\\ Nerd\\ Font\\ Complete"
+
+-- creates an auto command
+-- function autocmd(cmd)
+--     vim.cmd('autocmd '..cmd)
+-- end
+
+-- -- creates an auto group
+-- function augroup(autocmd, name)
+--     name = name or 'end'
+--     vim.api.nvim_exec('augroup '..name..' \nautocmd!\n'..autocmd..'\naugroup end', false)
+-- end
+
+-- augroup 'VimEnter * :BookmarkToggle'
+-- vim.api.nvim_exec([[
+--   augroup Bookmark
+--     autocmd!
+--     autocmd VimEnter * BookmarkLoad ./.vim-bookmarks
+--   augroup end
+-- ]], false)
+
+-- vim.api.nvim_exec([[
+--   augroup Bookmark
+--     autocmd!
+--     autocmd VimLeave * BookmarkSave ./.vim-bookmarks
+--   augroup end
+-- ]], false)
+
+vim.api.nvim_exec([[
+    augroup Bookmark
+    autocmd!
+    autocmd VimEnter * BookmarkLoad ./.vim-bookmarks
+    autocmd VimLeave * BookmarkSave ./.vim-bookmarks
+    autocmd BufWinEnter *.* BookmarkSave ./.vim-bookmarks
+    autocmd BufWinLeave *.* BookmarkSave ./.vim-bookmarks
+    augroup END 
+]], false)
+
+vim.o.cmdheight=1 -- to remove extra line at the bottom
+-- vim.o.timeoutlen=2000 -- set time between keys pressing
+
+-- Fold
+vim.wo.foldmethod='indent'
+

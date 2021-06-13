@@ -130,11 +130,20 @@ let g:which_key_map.F = {
 " m is for mark
 " I'd rather use regular marks but they never clear
 let g:which_key_map.m = {
-\ 'name': '+mark',
-    \ 't' : [':BookmarkToggle'   , 'toggle'],
-    \ 'j' : [':BookmarkNext'   , 'next mark'],
-    \ 'k' : [':BookmarkPrev'   , 'prev mark']
-    \ }
+      \ 'name' : '+Bookmarks' ,
+      \ 't' : [':BookmarkToggle'                              , 'Bookmark Toggle'],
+      \ 's' : [':BookmarkSave ./.vim-bookmarks'               , 'Bookmark Save'],
+      \ 'l' : [':BookmarkLoad ./.vim-bookmarks'               , 'Bookmark Load'],
+      \ 'i' : [':BookmarkAnnotate'                            , 'Bookmark Annotate'],
+      \ 'a' : [':BookmarkShowAll'                             , 'Bookmark Show All'],
+      \ 'j' : [':BookmarkNext'                                , 'Bookmark Next'],
+      \ 'k' : [':BookmarkPrev'                                , 'Bookmark Prev'],
+      \ 'c' : [':BookmarkClear'                               , 'Bookmark Clear'],
+      \ 'x' : [':BookmarkToggle'                              , 'Bookmark Clear All'],
+      \ 'K' : [':BookmarkMoveUp'                              , 'Bookmark Move Up'],
+      \ 'J' : [':BookmarkMoveDown'                            , 'Bookmark Move Down'],
+      \ 'g' : [':BookmarkMoveToLine'                          , 'Bookmark Move To Line'],
+      \ }
 
 " s is for search powered by telescope
 let g:which_key_map.s = {

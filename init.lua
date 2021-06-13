@@ -41,7 +41,7 @@ require('nv-dadbod')
 require('nv-doge')
 require('nv-dependency')
 require('nv-surround')
-require('nv-zessions')
+-- require('nv-zessions')
 -- require('nv-startify')
 -- require('nv-lspinstall')
 
@@ -73,6 +73,6 @@ require('lsp.virtual_text')
 require('lsp.latex-ls')
 require('lsp.svelte-ls')
 require('lsp.tailwindcss-ls')
--- require('lsp.emmet-ls')
+require('lsp.emmet-ls')
 -- vim.lsp.callbacks["textDocument/publishDiagnostics"] = function() end
 -- vim.lsp.handlers["textDocument/publishDiagnostics"] = nil

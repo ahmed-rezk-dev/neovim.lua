@@ -71,3 +71,8 @@ autocmd User GoyoLeave set laststatus=2
 let g:vsnip_filetypes = {}
 let g:vsnip_filetypes.javascriptreact = ['javascript']
 let g:vsnip_filetypes.typescriptreact = ['typescript']
+
+
+" Float Terminal
+hi FloatermBorder guibg=transparency guifg=green
+
