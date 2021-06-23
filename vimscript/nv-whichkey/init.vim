@@ -23,6 +23,7 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
 
 let g:which_key_map['/'] = 'comment toggle'
 let g:which_key_map[';'] = [ ':Dashboard'                                      , 'home screen' ]
+let g:which_key_map['w'] = [ ':/'                                              , 'Find' ]
 let g:which_key_map[','] = [ '<Plug>(emmet-expand-abbr)'                       , 'expand tags' ]
 let g:which_key_map['"'] = [ '<Plug>PeekupOpen'                                , 'registers' ]
 let g:which_key_map['?'] = [ ':NvimTreeFindFile'                               , 'find current file' ]
@@ -34,6 +35,8 @@ let g:which_key_map['H'] = [ ':let @/ = ""'                                    ,
 let g:which_key_map['r'] = [ ':RnvimrToggle'                                   , 'ranger' ]
 let g:which_key_map['*'] = [ ':DogeGenerate'                                   , 'documentation generator' ]
 let g:which_key_map['u'] = [ ':UndotreeToggle'                                 , 'undo tree' ]
+" let g:which_key_map['q'] = [ ':qa'                                              , 'Quit editor' ]
+" let g:which_key_map['c'] = [ 'q'                                               , 'Close' ]
 " TODO create entire treesitter section
 let g:which_key_map['T'] = [ ':TSHighlightCapturesUnderCursor'                 , 'treesitter highlight' ]
 let g:which_key_map['v'] = [ '<C-W>v'                                          , 'split right']
@@ -165,11 +168,12 @@ let g:which_key_map.s = {
       \ }
 
 " S is for Session
+" \ 'a' : [':Telescope session_manager load'           , 'all sessions'],
 let g:which_key_map.S = {
       \ 'name' : '+Session' ,
-      \ 'a' : [':Telescope zessions sessions'           , 'all sessions'],
-      \ 's' : [':SessionSave'           , 'save session'],
-      \ 'l' : [':SessionLoad'           , 'load Session'],
+      \ 'a' : [':Telescope session-lens search_session'           , 'all sessions'],
+      \ 's' : [':SaveSession'                                     , 'save session'],
+      \ 'l' : [':SessionLoad'                                     , 'load Session'],
       \ }
 
 " g is for git
@@ -246,13 +250,15 @@ let g:which_key_map.t = {
       \ 'f' : [':FloatermNew fzf'                               , 'fzf'],
       \ 'g' : [':FloatermNew lazygit'                           , 'git'],
       \ 'd' : [':FloatermNew lazydocker'                        , 'docker'],
-      \ 'n' : [':FloatermNew node'                              , 'node'],
       \ 'N' : [':FloatermNew nnn'                               , 'nnn'],
       \ 'p' : [':FloatermNew python'                            , 'python'],
       \ 'm' : [':FloatermNew lazynpm'                           , 'npm'],
       \ 't' : [':FloatermToggle'                                , 'toggle'],
       \ 'y' : [':FloatermNew ytop'                              , 'ytop'],
       \ 'u' : [':FloatermNew ncdu'                              , 'ncdu'],
+      \ 'T' : [':FloatermNew'                                   , 'New Tab'],
+      \ 'n' : [':FloatermNext'                                  , 'Next Tab'],
+      \ 'P' : [':FloatermPrev'                                  , 'Previous Tab'],
       \ }
       " \ 'r' : [':FloatermNew ranger'                            , 'ranger'],
 
@@ -263,3 +269,6 @@ let g:which_key_map.t = {
 "       \ }
 
 call which_key#register('<Space>', "g:which_key_map")
+
+
+set background=dark

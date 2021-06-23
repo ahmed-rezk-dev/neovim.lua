@@ -69,7 +69,15 @@ return require('packer').startup(function(use)
     use 'nvim-lua/plenary.nvim'
     use 'nvim-telescope/telescope.nvim'
     use 'nvim-telescope/telescope-media-files.nvim'
-    use 'https://github.com/Shatur/neovim-session-manager'
+
+    -- Session manager
+    use 'rmagatti/auto-session'
+    use {
+      'rmagatti/session-lens',
+      requires = {'rmagatti/auto-session', 'nvim-telescope/telescope.nvim'},
+    }
+    -- use 'https://github.com/Shatur/neovim-session-manager'
+
 
     -- Explorer
     use 'kyazdani42/nvim-tree.lua'
@@ -81,6 +89,9 @@ return require('packer').startup(function(use)
     use 'christianchiarulli/nvcode-color-schemes.vim'
     use 'norcalli/nvim-colorizer.lua'
     use 'sheerun/vim-polyglot'
+
+	-- Syntax
+    use { 'folke/todo-comments.nvim', requires = 'nvim-lua/plenary.nvim' }
 
     -- Git
     -- use 'TimUntersberger/neogit'

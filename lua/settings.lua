@@ -76,10 +76,10 @@ vim.cmd('set noswapfile')
 vim.api.nvim_exec([[
     augroup Bookmark
     autocmd!
-    autocmd VimEnter * BookmarkLoad ./.vim-bookmarks
-    autocmd VimLeave * BookmarkSave ./.vim-bookmarks
-    autocmd BufWinEnter *.* BookmarkSave ./.vim-bookmarks
-    autocmd BufWinLeave *.* BookmarkSave ./.vim-bookmarks
+    autocmd VimEnter * silent! BookmarkLoad ./.vim-bookmarks
+    autocmd VimLeave * silent! BookmarkSave ./.vim-bookmarks
+    autocmd BufWinEnter *.* silent! BookmarkSave ./.vim-bookmarks
+    autocmd BufWinLeave *.* silent! BookmarkSave ./.vim-bookmarks
     augroup END 
 ]], false)
 

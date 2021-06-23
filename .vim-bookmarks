@@ -1,0 +1,3 @@
+let l:bm_file_version = 1
+let l:bm_sessions = {'default': {'/Users/ahmedrezk/Development/fusionary/Duke-2020-Annual-Report-Williams-Group/src/App.js': [{'sign_idx': 9500, 'line_nr': 22, 'content': '			<Menu />'},],}}
+let l:bm_current_session = 'default'

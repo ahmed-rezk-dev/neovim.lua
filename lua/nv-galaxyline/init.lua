@@ -25,38 +25,38 @@ local condition = require('galaxyline.condition')
 local gls = gl.section
 gl.short_line_list = {'NvimTree', 'vista', 'dbui', 'packer'}
 
-gls.left[1] = {
-    ViMode = {
-        provider = function()
-            -- auto change color according the vim mode
-            local mode_color = {
-                n = colors.blue,
-                i = colors.green,
-                v = colors.purple,
-                [''] = colors.purple,
-                V = colors.purple,
-                c = colors.magenta,
-                no = colors.blue,
-                s = colors.orange,
-                S = colors.orange,
-                [''] = colors.orange,
-                ic = colors.yellow,
-                R = colors.red,
-                Rv = colors.red,
-                cv = colors.blue,
-                ce = colors.blue,
-                r = colors.cyan,
-                rm = colors.cyan,
-                ['r?'] = colors.cyan,
-                ['!'] = colors.blue,
-                t = colors.blue
-            }
-            vim.api.nvim_command('hi GalaxyViMode guifg=' .. mode_color[vim.fn.mode()])
-            return '▊ '
-        end,
-        highlight = {colors.red, colors.bg}
-    }
-}
+-- gls.left[1] = {
+--     ViMode = {
+--         provider = function()
+--             -- auto change color according the vim mode
+--             local mode_color = {
+--                 n = colors.blue,
+--                 i = colors.green,
+--                 v = colors.purple,
+--                 [''] = colors.purple,
+--                 V = colors.purple,
+--                 c = colors.magenta,
+--                 no = colors.blue,
+--                 s = colors.orange,
+--                 S = colors.orange,
+--                 [''] = colors.orange,
+--                 ic = colors.yellow,
+--                 R = colors.red,
+--                 Rv = colors.red,
+--                 cv = colors.blue,
+--                 ce = colors.blue,
+--                 r = colors.cyan,
+--                 rm = colors.cyan,
+--                 ['r?'] = colors.cyan,
+--                 ['!'] = colors.blue,
+--                 t = colors.blue
+--             }
+--             vim.api.nvim_command('hi GalaxyViMode guifg=' .. mode_color[vim.fn.mode()])
+--             return '▊ '
+--         end,
+--         highlight = {colors.red, colors.bg}
+--     }
+-- }
 print(vim.fn.getbufvar(0, 'ts'))
 vim.fn.getbufvar(0, 'ts')
 
@@ -191,6 +191,101 @@ gls.right[11] = {
         highlight = {colors.orange, colors.bg}
     }
 }
+
+gls.right[12] = {
+    viMode_icon = {
+        provider = function()
+            return " "
+        end,
+        highlight = {colors.statusline_bg, colors.red},
+        separator = " ",
+        separator_highlight = {colors.red, colors.lightbg}
+    }
+}
+
+gls.right[13] = {
+    ViMode = {
+        provider = function()
+            local alias = {
+                n = "Normal",
+                i = "Insert",
+                c = "Command",
+                V = "Visual",
+                [""] = "Visual",
+                v = "Visual",
+                R = "Replace"
+            }
+            local current_Mode = alias[vim.fn.mode()]
+
+            if current_Mode == nil then
+                return "  Terminal "
+            else
+                return "  " .. current_Mode .. " "
+            end
+        end,
+        highlight = {colors.red, colors.lightbg}
+    }
+}
+
+gls.right[14] = {
+    some_icon = {
+        provider = function()
+            return " "
+        end,
+        separator = "",
+        separator_highlight = {colors.green, colors.lightbg},
+        highlight = {colors.lightbg, colors.green}
+    }
+}
+
+gls.right[15] = {
+    line_percentage = {
+        provider = function()
+            local current_line = vim.fn.line(".")
+            local total_line = vim.fn.line("$")
+
+            if current_line == 1 then
+                return "  Top "
+            elseif current_line == vim.fn.line("$") then
+                return "  Bot "
+            end
+            local result, _ = math.modf((current_line / total_line) * 100)
+            return "  " .. result .. "% "
+        end,
+        highlight = {colors.green, colors.lightbg}
+    }
+}
+
+-- gls.left[12] = {
+--     FileIcon = {
+--         provider = "FileIcon",
+--         condition = condition.buffer_not_empty,
+--         highlight = {colors.white, colors.lightbg}
+--     }
+-- }
+
+-- gls.left[13] = {
+--     FileName = {
+--         provider = {"FileName"},
+--         condition = condition.buffer_not_empty,
+--         highlight = {colors.white, colors.lightbg},
+--         separator = " ",
+--         separator_highlight = {colors.lightbg, colors.lightbg2}
+--     }
+-- }
+
+gls.left[14] = {
+    current_dir = {
+        provider = function()
+            local dir_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
+            return "  " .. dir_name .. " "
+        end,
+        highlight = {colors.grey_fg2, colors.lightbg2},
+        separator = " ",
+        separator_highlight = {colors.lightbg2, colors.statusline_bg}
+    }
+}
+
 
 gls.short_line_left[1] = {
     BufferType = {
