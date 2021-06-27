@@ -128,7 +128,8 @@ return require('packer').startup(function(use)
     use 'kevinhwang91/rnvimr' -- telescope may fully replace you
 
     -- General Plugins
-    use 'liuchengxu/vim-which-key'
+    -- use 'liuchengxu/vim-which-key'
+	use "folke/which-key.nvim"
     use 'kevinhwang91/nvim-bqf'
     use 'airblade/vim-rooter'
     -- use 'ChristianChiarulli/dashboard-nvim'
