@@ -96,8 +96,8 @@ require"lspconfig".efm.setup {
             json = {prettier},
             yaml = {prettier},
             markdown = {markdownPandocFormat},
-            javascriptreact = {prettier, eslint},
-            javascript = {prettier, eslint},
+            -- javascriptreact = {prettier, eslint},
+            -- javascript = {prettier, eslint},
             -- markdown = {markdownPandocFormat, markdownlint},
         }
     }

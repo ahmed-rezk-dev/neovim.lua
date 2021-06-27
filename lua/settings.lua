@@ -37,7 +37,9 @@ vim.o.clipboard = "unnamedplus" -- Copy paste between vim and everything else
 -- vim.o.guifont = "JetBrainsMono\\ Nerd\\ Font\\ Mono:h18"
 -- vim.o.guifont = "Hack\\ Nerd\\ Font\\ Mono"
 -- vim.o.guifont = "SauceCodePro Nerd Font:h17"
-vim.o.guifont = "FiraCode Nerd Font:h17"
+-- vim.o.guifont = "Hack Nerd Font:13"
+-- vim.o.guifont = "FiraCode Nerd Font Mono:13"
+vim.o.guifont = "Hack Nerd Font:13"
 vim.cmd('set shell=/bin/zsh')
 -- vim.cmd('set shell=~/.zshrc')
 
