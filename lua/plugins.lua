@@ -62,8 +62,8 @@ return require('packer').startup(function(use)
     -- Status Line and Bufferline
     use { 'glepnir/galaxyline.nvim' }
     -- use { 'glepnir/galaxyline.nvim', config = function() require'nv-galaxyline' end } -- inline fn alternative
-    -- use 'romgrk/barbar.nvim'
-	use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
+    use 'romgrk/barbar.nvim'
+	-- use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
 
     -- Telescope
     use 'nvim-lua/popup.nvim'
@@ -100,6 +100,7 @@ return require('packer').startup(function(use)
     use 'f-person/git-blame.nvim'
     use 'tpope/vim-fugitive'
     use 'tpope/vim-rhubarb'
+	use 'TimUntersberger/neogit'
 
     -- Easily Create Gists
     use 'mattn/vim-gist'

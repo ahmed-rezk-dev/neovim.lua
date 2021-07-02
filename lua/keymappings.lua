@@ -1,3 +1,18 @@
+local function map(mode, lhs, rhs, opts)
+    local options = {noremap = true}
+    if opts then
+        options = vim.tbl_extend("force", options, opts)
+    end
+    vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+end
+
+local opt = {} 
+
+-- OPEN TERMINALS --
+map("n", "<C-l>", [[<Cmd>vnew term://bash <CR>]], opt) -- term over right
+map("n", "<C-x>", [[<Cmd> split term://bash | resize 10 <CR>]], opt) --  term bottom
+map("n", "<C-t>t", [[<Cmd> tabnew | term <CR>]], opt) -- term newtab
+
 vim.api.nvim_set_keymap('n', '<Space>', '<NOP>', {noremap = true, silent = true})
 vim.g.mapleader = ' '
 
@@ -57,6 +72,7 @@ vim.api.nvim_set_keymap('x', 'J', ':move \'>+1<CR>gv-gv', {noremap = true, silen
 -- Better nav for omnicomplete
 vim.cmd('inoremap <expr> <c-j> (\"\\<C-n>\")')
 vim.cmd('inoremap <expr> <c-k> (\"\\<C-p>\")')
+vim.cmd("nnoremap <silent><Leader>L :put =printf('console.log(''%s:'',  %s);', expand('<cword>'), expand('<cword>'))<CR>")
 -- vim.cmd('inoremap <expr> <TAB> (\"\\<C-n>\")')
 -- vim.cmd('inoremap <expr> <S-TAB> (\"\\<C-p>\")')
 

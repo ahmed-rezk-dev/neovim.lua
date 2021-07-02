@@ -38,8 +38,8 @@ vim.o.clipboard = "unnamedplus" -- Copy paste between vim and everything else
 -- vim.o.guifont = "Hack\\ Nerd\\ Font\\ Mono"
 -- vim.o.guifont = "SauceCodePro Nerd Font:h17"
 -- vim.o.guifont = "Hack Nerd Font:13"
--- vim.o.guifont = "FiraCode Nerd Font Mono:13"
-vim.o.guifont = "Hack Nerd Font:13"
+vim.o.guifont = "FiraCode Nerd Font Mono:13"
+-- vim.o.guifont = "Hack Nerd Font:13"
 vim.cmd('set shell=/bin/zsh')
 -- vim.cmd('set shell=~/.zshrc')
 
@@ -86,8 +86,12 @@ vim.api.nvim_exec([[
 ]], false)
 
 vim.o.cmdheight=1 -- to remove extra line at the bottom
--- vim.o.timeoutlen=2000 -- set time between keys pressing
+vim.o.timeoutlen=200 -- set time between keys pressing
 
 -- Fold
 vim.wo.foldmethod='indent'
 
+-- hide line numbers in terminal windows
+vim.api.nvim_exec([[
+   au BufEnter term://* setlocal nonumber
+]], false)

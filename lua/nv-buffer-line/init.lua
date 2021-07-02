@@ -14,7 +14,7 @@ require "bufferline".setup {
         view = "multiwindow",
         show_buffer_close_icons = true,
         separator_style = "thin",
-        mappings = "true",
+        mappings = false,
 		diagnostics = "nvim_lsp",
     }
 }
@@ -26,6 +26,7 @@ vim.g.mapleader = " "
 -- MAPPINGS
 map("n", "<S-t>", [[<Cmd>tabnew<CR>]], opt) -- new tab
 map("n", "<S-x>", [[<Cmd>bdelete<CR>]], opt) -- close tab
+map("n", "<C-p>", [[<Cmd>BufferLinePick<CR>]], opt) -- pick tab
 
 -- move between tabs
 map("n", "<TAB>", [[<Cmd>BufferLineCycleNext<CR>]], opt)
