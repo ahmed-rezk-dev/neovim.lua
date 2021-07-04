@@ -76,3 +76,13 @@ let g:vsnip_filetypes.typescriptreact = ['typescript']
 " Float Terminal
 hi FloatermBorder guibg=transparency guifg=green
 
+" Reloads vimrc after saving but keep cursor position
+if (!exists('*ReloadConfig'))
+	function ReloadConfig()
+		let save_cursor = getcurpos()
+		source $MYVIMRC
+		call setpos('.', save_cursor)
+	endfunction 
+endif
+" autocmd! BufWritePost $MYVIMRC call ReloadConfig()
+
