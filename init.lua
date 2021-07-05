@@ -7,8 +7,11 @@ require('nv-autocommands')
 -- require('config')
 require('settings')
 require('keymappings')
+-- Colors
+require('themes.gruvbox')
 require('colorscheme')
 require('nv-galaxyline')
+require('file-icons')
 
 -- Plugins
 require('nv-compe')

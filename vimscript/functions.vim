@@ -44,7 +44,7 @@ command! DebugGetSession lua require'dap'.session()
 " Debug Adapter protocol:
 "   https://microsoft.github.io/debug-adapter-protocol/
 
-" TODO Add full support later
+" TODO: Add full support later
 " nnoremap <silent> <F5> :lua require'dap'.continue()<CR>
 " nnoremap <silent> <F10> :lua require'dap'.step_over()<CR>
 " nnoremap <silent> <F11> :lua require'dap'.step_into()<CR>

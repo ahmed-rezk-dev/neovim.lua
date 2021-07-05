@@ -87,7 +87,8 @@ return require('packer').startup(function(use)
     -- use 'https://gitlab.com/raz13l/zessions'
 
     -- Color
-    use 'christianchiarulli/nvcode-color-schemes.vim'
+    -- use 'christianchiarulli/nvcode-color-schemes.vim'
+    use 'morhetz/gruvbox'
     use 'norcalli/nvim-colorizer.lua'
     use 'sheerun/vim-polyglot'
 

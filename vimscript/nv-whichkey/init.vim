@@ -269,6 +269,3 @@ let g:which_key_map.t = {
 "       \ }
 
 call which_key#register('<Space>', "g:which_key_map")
-
-
-set background=dark
