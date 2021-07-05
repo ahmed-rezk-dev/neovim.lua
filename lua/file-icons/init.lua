@@ -1,4 +1,4 @@
-local colors = require('colorscheme')
+local colors = require('themes.colorscheme')
 
 require "nvim-web-devicons".setup {
     override = {

@@ -8,8 +8,7 @@ require('nv-autocommands')
 require('settings')
 require('keymappings')
 -- Colors
-require('themes.gruvbox')
-require('colorscheme')
+require('themes.colorscheme')
 require('nv-galaxyline')
 require('file-icons')
 
