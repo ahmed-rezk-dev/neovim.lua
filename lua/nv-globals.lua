@@ -8,6 +8,53 @@ O = {
     number = true,
     relative_number = true,
     shell = 'bash',
+    plugin = {
+    -- TODO remove non built-ins
+    -- Builtins
+    dashboard = { active = false },
+    colorizer = { active = false },
+    zen = { active = false },
+    ts_playground = { active = false },
+    ts_context_commentstring = { active = false },
+    ts_hintobjects = { active = false },
+    ts_textobjects = { active = false },
+    ts_textsubjects = { active = false },
+    telescope_fzy = { active = false },
+    telescope_project = { active = false },
+    indent_line = { active = false },
+    symbol_outline = { active = false },
+    debug = { active = false },
+    dap_install = { active = false },
+    lazygit = { active = false },
+    lush = { active = false },
+    diffview = { active = false },
+
+    ----------------------------------------------------------------------
+    -- Non builtins
+
+    octo = { active = false },
+    gitlinker = { active = false },
+    todo_comments = { active = false },
+    gist = { active = false },
+    git_blame = { active = false },
+    lsp_colors = { active = false },
+    ranger = { active = false },
+    hop = { active = false },
+    dial = { active = false },
+    matchup = { active = false },
+    numb = { active = false },
+    bqf = { active = false },
+    trouble = { active = false },
+    floatterm = { active = false },
+    spectre = { active = true },
+    lsp_rooter = { active = false },
+    markdown_preview = { active = false },
+    bracey = { active = false },
+    codi = { active = false },
+    sanegx = { active = false },
+    snap = { active = false },
+    tabnine = { active = false },
+  },
 
     -- @usage pass a table with your desired languages
     treesitter = {

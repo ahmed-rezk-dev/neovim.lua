@@ -94,6 +94,8 @@ cmd("hi! StatusLineNC gui=underline guifg=" .. line)
 cmd "hi clear CursorLine"
 fg("cursorlinenr", white)
 
+bg('SignColumn', 'foo') -- Signs column bg color (Next to numbers column).
+
 -- git signs ---
 fg_bg("DiffAdd", nord_blue, "none")
 fg_bg("DiffChange", one_bg2, "none")
@@ -134,8 +136,8 @@ fg("LspDiagnosticsVirtualTextHint", purple)
 
 -- bufferline
 
-fg_bg("BufferLineFill", grey_fg, black2)
 fg_bg("BufferLineBackground", light_grey, black2)
+fg_bg("BufferLineFill", grey_fg, black2)
 
 fg_bg("BufferLineBufferVisible", light_grey, black2)
 fg_bg("BufferLineBufferSelected", white, active_tab_bg)

@@ -1,6 +1,6 @@
 -- General mappings
-require('plugins')
 require('nv-globals')
+require('plugins')
 require('nv-utils')
 vim.cmd('luafile ~/.config/nvim/nv-settings.lua')
 require('nv-autocommands')
@@ -83,3 +83,4 @@ require('lsp.tailwindcss-ls')
 require('lsp.emmet-ls')
 -- vim.lsp.callbacks["textDocument/publishDiagnostics"] = function() end
 -- vim.lsp.handlers["textDocument/publishDiagnostics"] = nil
+

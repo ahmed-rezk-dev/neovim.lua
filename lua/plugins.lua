@@ -35,7 +35,20 @@ return require('packer').startup(function(use)
     use 'kabouzeid/nvim-lspinstall'
 
     -- Debugging
-    use 'mfussenegger/nvim-dap'
+      use {
+        "mfussenegger/nvim-dap",
+        config = function()
+          require "dap"
+          vim.fn.sign_define("DapBreakpoint", {
+            text = "",
+            texthl = "LspDiagnosticsSignError",
+            linehl = "",
+            numhl = "",
+          })
+          require("dap").defaults.fallback.terminal_win_cmd = "50vsplit new"
+        end,
+        disable = not O.plugin.debug.active,
+      }
 
     -- Autocomplete
     use 'hrsh7th/nvim-compe'
@@ -208,4 +221,25 @@ return require('packer').startup(function(use)
     	}
       end
 	}
+    -- Floating terminal
+    use {
+        "numToStr/FTerm.nvim",
+        event = "BufRead",
+        config = function()
+          require("FTerm").setup {
+            dimensions = { height = 0.8, width = 0.8, x = 0.5, y = 0.5 },
+            border = "single", -- or 'double'
+          }
+        end,
+        disable = not O.plugin.floatterm.active,
+    }
+    -- Search & Replace
+    use {
+        "windwp/nvim-spectre",
+        event = "BufRead",
+        config = function()
+          require("spectre").setup()
+        end,
+        disable = not O.plugin.spectre.active,
+    }
 end)
